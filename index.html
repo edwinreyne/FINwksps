@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FIN Workspace 财务决策操作系统模拟原型">
+  <title>FIN Workspace · 模拟原型</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <button class="brand-mark" data-nav="cockpit" aria-label="FIN Workspace 首页">FW</button>
+      <nav id="primary-nav"></nav>
+      <div class="sidebar-foot">
+        <button class="icon-btn" data-action="reset" title="重置演示">↻</button>
+        <button class="icon-btn" data-nav="admin" title="设置">⚙</button>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div>
+          <h1>FIN Workspace</h1>
+          <span class="environment-pill">DEMO · 模拟数据</span>
+        </div>
+        <div class="top-actions">
+          <button class="select-btn">FY27 Q1 <span>⌄</span></button>
+          <button class="select-btn">Global · HF/VN <span>⌄</span></button>
+          <button id="role-switch" class="profile-btn" aria-haspopup="true">
+            <span id="role-avatar">C</span><span id="role-name">CFO</span><span>⌄</span>
+          </button>
+          <div id="role-menu" class="role-menu" hidden>
+            <button data-role="cfo"><strong>CFO</strong><small>决策、审批与价值监督</small></button>
+            <button data-role="analyst"><strong>FP&A Analyst</strong><small>待办、分析与执行协同</small></button>
+          </div>
+        </div>
+      </header>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <main id="main-content" tabindex="-1"></main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <script src="app.js"></script>
+</body>
+</html>
